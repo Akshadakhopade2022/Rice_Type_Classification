@@ -4,7 +4,7 @@ import numpy as np
 
 st.markdown('# Rice Type Classification')
 
-st.image('/content/drive/MyDrive/rice_type_classification/rice.jpg')
+st.image('rice.jpg')
 
 tab1, tab2 = st.tabs(['Description', 'Prediction'])
 
@@ -65,7 +65,7 @@ with tab2:
           
     x10 = st.slider('Aspect Ration : ', min_value = 1.3, max_value = 5.0, step = 0.1, value = 1.3)
      
-    model = pkl.load(open('/content/drive/MyDrive/rice_type_classification/lr_rice.pkl', 'rb'))
+    model = pkl.load(open('lr_rice.pkl', 'rb'))
     
     if st.button('Predict Rice Type'):
         x = model.predict(np.array([[x1, x2, x3, x4, x5, x6, x7, x8, x9, x10]]))[0]
